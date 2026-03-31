@@ -31,20 +31,19 @@ public class PacientService {
         return pacientRepository.save(pacient);
     }
 
-    public Optional<Pacient> updatePacient(int id,String name,String especiality,int priority){
-        if (pacientRepository.existsById(id)){
-            pacient.setId(id);
-            return Optional.of(pacientRepository.save(pacient));
-
+    public Optional<Pacient> updatePacient(int id, Pacient updatedPacient) {
+        if (pacientRepository.existsById(id)) {
+            updatedPacient.setId(id);
+            return Optional.of(pacientRepository.save(updatedPacient));
         }
         return Optional.empty();
     }
 
-    public boolean deleteProduct(int id){
-        if (pacientRepository.existsById(id))
+    public boolean deletePacient(int id) {
+        if (pacientRepository.existsById(id)) {
             pacientRepository.deletedById(id);
             return true;
+        }
+        return false;
     }
-    return false;
-    
 }

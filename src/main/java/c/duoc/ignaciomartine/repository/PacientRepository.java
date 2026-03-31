@@ -2,6 +2,7 @@ package c.duoc.ignaciomartine.repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -11,7 +12,7 @@ import c.duoc.ignaciomartine.model.Pacient;
 
 @Repository
 public class PacientRepository {
-    private final Map<id, Pacient> pacientHosp = new HashMap<>();
+    private final Map<Integer, Pacient> pacientHosp = new HashMap<>();
 
 
     public List<Pacient> findAll(){
