@@ -44,7 +44,7 @@ public class PacientController {
             .orElse(ResponseEntity.notFound().build());
     }
 
-    @PutMapping("path/{id}")
+    @PostMapping("path/{id}")
     public ResponseEntity<?> createProduct(@Valid @RequestBody Pacient pacient){
         return ResponseEntity.ok(service.createPacient(pacient));
     }
@@ -54,14 +54,14 @@ public class PacientController {
         return service.updatePacient(int, pacient)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
-    
+    }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}"){}
     public ResponseEntity<?> deletePacient(@PathVariable int id){
         return service.deletePacient(id)
                 ? ResponseEntity.noContent().build();
                 ? ResponseEntity.notFound().build();
-    }
     
+    }
     
 }

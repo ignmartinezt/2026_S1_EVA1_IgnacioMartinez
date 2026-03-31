@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import c.duoc.ignaciomartine.model.Pacient;
+import c.duoc.ignaciomartine.repository.PacientRepository;
 
 @Service
 public class PacientService {
@@ -30,7 +31,7 @@ public class PacientService {
         return pacientRepository.save(pacient);
     }
 
-    public Optional<Pacient> updatePacient(int id,string name,string especiality,int priority){
+    public Optional<Pacient> updatePacient(int id,String name,String especiality,int priority){
         if (pacientRepository.existsById(id)){
             pacient.setId(id);
             return Optional.of(pacientRepository.save(pacient));
